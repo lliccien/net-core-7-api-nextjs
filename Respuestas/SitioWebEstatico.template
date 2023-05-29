@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html
+  Distribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Origins:
+          - DomainName: !GetAtt S3Bucket.RegionalDomainName
+            Id: S3Origin
+            S3OriginConfig:
+              OriginAccessIdentity: ''
+        Enabled: true
+        DefaultRootObject: index.html
+        DefaultCacheBehavior:
+          TargetOriginId: S3Origin
+          ViewerProtocolPolicy: redirect-to-https
+          ForwardedValues:
+            QueryString: false
+        ViewerCertificate:
+          AcmCertificateArn: REPLACE_WITH_ACM_CERTIFICATE_ARN
+          SslSupportMethod: sni-only
+  DNSRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneName: REPLACE_WITH_HOSTED_ZONE_NAME
+      Name: REPLACE_WITH_DOMAIN_NAME
+      Type: A
+      AliasTarget:
+        HostedZoneId: Z2FDTNDATAQYW2
+        DNSName: !GetAtt Distribution.DomainName
+
+
+# Recuerda reemplazar REPLACE_WITH_ACM_CERTIFICATE_ARN con el ARN de tu certificado de ACM
+# y REPLACE_WITH_HOSTED_ZONE_NAME y REPLACE_WITH_DOMAIN_NAME con tu zona hospedada y nombre de dominio respectivamente.

@@ -1,0 +1,7 @@
+
+Los principios SOLID son un conjunto de reglas que guían el diseño de software de calidad.
+S - Principio de Responsabilidad Única: Cada clase o módulo debe tener una única responsabilidad.
+O - Principio de Abierto/Cerrado: El software debe estar abierto para extenderse pero cerrado para modificarlo.
+L - Principio de Sustitución de Liskov: Las clases derivadas deben poder ser sustituidas por sus clases base sin cambiar el comportamiento esperado.
+I - Principio de Segregación de Interfaz: Las interfaces deben ser específicas para cada cliente, evitando interfaces voluminosas y poco utilizadas.
+D - Principio de Inversión de Dependencia: Los módulos de alto nivel no deben depender de los de bajo nivel, sino de abstracciones. Esto fomenta la modularidad y la reutilización del código.
