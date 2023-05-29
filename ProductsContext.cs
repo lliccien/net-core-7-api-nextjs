@@ -17,7 +17,7 @@ public class ProductsContext: DbContext
             Name = " Producto 1",
             Price = 10.5f,
             Stock = 10,
-            Image = "peoduct.png",
+            Image = "productNoImage.png",
             CreatedAt = DateTime.Now,
             UpdatedAt =  DateTime.Now
         });
@@ -26,7 +26,7 @@ public class ProductsContext: DbContext
             Name = " Producto 2",
             Price = 20.5f,
             Stock = 20,
-            Image = "peoduct.png",
+            Image = "productNoImage.png",
             CreatedAt = DateTime.Now,
             UpdatedAt =  DateTime.Now
         });
@@ -35,7 +35,7 @@ public class ProductsContext: DbContext
             Name = " Producto 3",
             Price = 30.5f,
             Stock = 30,
-            Image = "peoduct.png",
+            Image = "productNoImage.png",
             CreatedAt = DateTime.Now,
             UpdatedAt =  DateTime.Now
         });
@@ -44,7 +44,7 @@ public class ProductsContext: DbContext
             Name = " Producto 4",
             Price = 40.5f,
             Stock = 40,
-            Image = "peoduct.png",
+            Image = "productNoImage.png",
             CreatedAt = DateTime.Now,
             UpdatedAt =  DateTime.Now
         });                
@@ -53,7 +53,7 @@ public class ProductsContext: DbContext
             Name = " Producto 5",
             Price = 50.5f,
             Stock = 50,
-            Image = "peoduct.png",
+            Image = "productNoImage.png",
             CreatedAt = DateTime.Now,
             UpdatedAt =  DateTime.Now
         });
